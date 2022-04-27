@@ -38,4 +38,9 @@ public class UserController {
     public List<User> list() {
         return this.userRepository.findAll();
     }
+
+    @GetMapping("/list/{id}")
+    public List<User> listMoreThan(@PathVariable("id") Long id) {
+        return this.userRepository.findAllMoreThan(id);
+    }
 }
